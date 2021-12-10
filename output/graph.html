@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1500;
+            height: 1500;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": " AlphaZero", "label": " AlphaZero", "shape": "dot"}, {"id": " reinforcement learning agents", "label": " reinforcement learning agents", "shape": "dot"}, {"id": " to converge", "label": " to converge", "shape": "dot"}, {"id": " a long time", "label": " a long time", "shape": "dot"}, {"id": " it", "label": " it", "shape": "dot"}, {"id": " high computational power due to complex neural networks for solving games like Chess , Go , Shogi , etc . Owing to this", "label": " high computational power due to complex neural networks for solving games like Chess , Go , Shogi , etc . Owing to this", "shape": "dot"}, {"id": " many", "label": " many", "shape": "dot"}, {"id": " neural MCTS researchers", "label": " neural MCTS researchers", "shape": "dot"}, {"id": " we", "label": " we", "shape": "dot"}, {"id": " a new neural MCTS algo- rithm , called Dual MCTS , which helps overcome these drawbacks . Dual MCTS uses two different search trees , a single deep neural network , and a new update technique for the search trees using a combination of the PUCB , a sliding - window", "label": " a new neural MCTS algo- rithm , called Dual MCTS , which helps overcome these drawbacks . Dual MCTS uses two different search trees , a single deep neural network , and a new update technique for the search trees using a combination of the PUCB , a sliding - window", "shape": "dot"}, {"id": " which", "label": " which", "shape": "dot"}, {"id": " overcome these drawbacks", "label": " overcome these drawbacks", "shape": "dot"}, {"id": " these drawbacks", "label": " these drawbacks", "shape": "dot"}, {"id": " Dual MCTS", "label": " Dual MCTS", "shape": "dot"}, {"id": " two different search trees , a single deep neural network , and a new update technique for the search trees using a combination of the PUCB ,", "label": " two different search trees , a single deep neural network , and a new update technique for the search trees using a combination of the PUCB ,", "shape": "dot"}, {"id": " the", "label": " the", "shape": "dot"}, {"id": " a combination of the PUCB , a sliding - window", "label": " a combination of the PUCB , a sliding - window", "shape": "dot"}, {"id": " We", "label": " We", "shape": "dot"}, {"id": " that Dual MCTS performs better than one of the most widely used neural MCTS algorithms , AlphaZero , for various symmetric and asymmetric games", "label": " that Dual MCTS performs better than one of the most widely used neural MCTS algorithms , AlphaZero , for various symmetric and asymmetric games", "shape": "dot"}, {"id": " for various symmetric and asymmetric games", "label": " for various symmetric and asymmetric games", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": " AlphaZero", "label": " trained", "to": " reinforcement learning agents"}, {"from": " to converge", "label": " takes", "to": " a long time"}, {"from": " it", "label": " requires", "to": " high computational power due to complex neural networks for solving games like Chess , Go , Shogi , etc . Owing to this"}, {"from": " many", "label": " aspiring", "to": " neural MCTS researchers"}, {"from": " we", "label": " propose", "to": " a new neural MCTS algo- rithm , called Dual MCTS , which helps overcome these drawbacks . Dual MCTS uses two different search trees , a single deep neural network , and a new update technique for the search trees using a combination of the PUCB , a sliding - window"}, {"from": " which", "label": " helps", "to": " overcome these drawbacks"}, {"from": " which", "label": " overcome", "to": " these drawbacks"}, {"from": " Dual MCTS", "label": " uses", "to": " two different search trees , a single deep neural network , and a new update technique for the search trees using a combination of the PUCB ,"}, {"from": " the", "label": " using", "to": " a combination of the PUCB , a sliding - window"}, {"from": " We", "label": " show", "to": " that Dual MCTS performs better than one of the most widely used neural MCTS algorithms , AlphaZero , for various symmetric and asymmetric games"}, {"from": " Dual MCTS", "label": " performs", "to": " for various symmetric and asymmetric games"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

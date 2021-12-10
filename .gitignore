@@ -132,4 +132,3 @@ dmypy.json
 /pretrained_weights/*
 *.hdf5
 *.pkl
-*.ipynb
