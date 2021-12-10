@@ -1,0 +1,5 @@
+sentence-transformers==0.4.1.2
+pandas==1.2.3
+h5py==3.1.0
+Flask==1.1.2
+arxiv==0.5.3

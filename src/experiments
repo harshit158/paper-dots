@@ -1,0 +1,17 @@
+
+-> make gif
+-> explore bertsum for summarization of abstract
+-> dash and plotly for knowledge graph
+-> entire pipeline
+-> Identify 
+    -> Research year
+    -> Authors
+    -> 
+-> Prepare readme
+-> Make a list of conferences and datasets found in research paper
+-> Should show image as a popup after processing
+
+Done -----
+-> Use latest models
+-> get arxiv corpus embeddings
+-> explore sentence-transformer to do semantic search over publication https://github.com/UKPLab/sentence-transformers/blob/master/examples/applications/semantic-search/semantic_search_publications.py

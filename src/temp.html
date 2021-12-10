@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1500;
+            height: 1500;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": " We", "label": " We", "shape": "dot"}, {"id": " a new language representation model called BERT , which stands for Bidirectional Encoder Representations from Transformers . Unlike recent language representation models", "label": " a new language representation model called BERT , which stands for Bidirectional Encoder Representations from Transformers . Unlike recent language representation models", "shape": "dot"}, {"id": " BERT", "label": " BERT", "shape": "dot"}, {"id": " train deep bidirectional representations from unlabeled text", "label": " train deep bidirectional representations from unlabeled text", "shape": "dot"}, {"id": " the pre - trained BERT model", "label": " the pre - trained BERT model", "shape": "dot"}, {"id": " state - of - the - art models for a wide range of tasks , such as question answering and language inference , without substantial task - specific architecture modifications", "label": " state - of - the - art models for a wide range of tasks , such as question answering and language inference , without substantial task - specific architecture modifications", "shape": "dot"}, {"id": " It", "label": " It", "shape": "dot"}, {"id": " new state - of - the - art results on eleven natural language processing tasks , including pushing the GLUE score to 80.5 % ( 7.7 % point absolute improvement ) , MultiNLI accuracy", "label": " new state - of - the - art results on eleven natural language processing tasks , including pushing the GLUE score to 80.5 % ( 7.7 % point absolute improvement ) , MultiNLI accuracy", "shape": "dot"}, {"id": " SQuAD v1.1 question", "label": " SQuAD v1.1 question", "shape": "dot"}, {"id": " Test", "label": " Test", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": " We", "label": " introduce", "to": " a new language representation model called BERT , which stands for Bidirectional Encoder Representations from Transformers . Unlike recent language representation models"}, {"from": " BERT", "label": " pre", "to": " train deep bidirectional representations from unlabeled text"}, {"from": " the pre - trained BERT model", "label": " create", "to": " state - of - the - art models for a wide range of tasks , such as question answering and language inference , without substantial task - specific architecture modifications"}, {"from": " It", "label": " obtains", "to": " new state - of - the - art results on eleven natural language processing tasks , including pushing the GLUE score to 80.5 % ( 7.7 % point absolute improvement ) , MultiNLI accuracy"}, {"from": " SQuAD v1.1 question", "label": " answering", "to": " Test"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
